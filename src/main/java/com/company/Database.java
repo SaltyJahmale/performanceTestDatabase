@@ -18,7 +18,7 @@ public class Database {
 
         Connection connection = null;
         try {
-            String URL = "jdbc:postgresql://localhost:5433/adv";
+            String URL = "jdbc:postgresql://localhost:5432/adv";
             String USERNAME = "postgres";
             String PASSWORD = "0";
 

@@ -1,4 +1,6 @@
-package com.company;
+package inputData;
+
+import com.company.Database;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -10,14 +12,14 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by Bogust on 10-12-2016.
  */
-public class RunnableOne implements Runnable {
+public class InputThreadOne implements Runnable {
     private Thread thread;
     private String threadName;
     LocalDate dateOfToday = LocalDate.now();
 
     Connection connection = Database.connect();
 
-    RunnableOne(String name) {
+    public InputThreadOne(String name) {
         threadName = name;
         System.out.println("Creating " + threadName);
     }

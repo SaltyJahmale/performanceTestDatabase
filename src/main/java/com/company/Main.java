@@ -1,16 +1,36 @@
 package com.company;
 
+import collectData.GetDataThreadOne;
+import collectData.GetDataThreadTwo;
+import inputData.InputThreadOne;
+import inputData.InputThreadThree;
+import inputData.InputThreadTwo;
+
 public class Main {
 
     public static void main(String[] args) {
-        RunnableOne runnableOne = new RunnableOne("FirstUser");
-        runnableOne.start();
 
-        RunnableTwo runnableTwo = new RunnableTwo("SecondUser");
-        runnableTwo.start();
 
-        RunnableThree runnableThree = new RunnableThree("ThirdUser");
-        runnableThree.start();
+        /*
+        Insert random data
+         */
+//        InputThreadOne runnableOne = new InputThreadOne("FirstUser");
+//        runnableOne.start();
+//
+//        InputThreadTwo runnableTwo = new InputThreadTwo("SecondUser");
+//        runnableTwo.start();
+//
+//        InputThreadThree runnableThree = new InputThreadThree("ThirdUser");
+//        runnableThree.start();
 
+
+        /*
+        Get the data from a random student with all his courses
+         */
+        GetDataThreadOne getDataThread = new GetDataThreadOne("First get thread");
+        getDataThread.start();
+
+        GetDataThreadTwo getDataThreadTwo = new GetDataThreadTwo("Second get thread");
+        getDataThreadTwo.start();
     }
 }
