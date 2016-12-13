@@ -30,12 +30,11 @@ public class GetDataThreadTwo implements Runnable {
         int startingIterations = 1;
         int maxIterations = 600;
         List<Long> durationThread = new ArrayList();
-        long startTime;
+        long startTime = 0;
         long endTime;
         long duration;
 
         while (startingIterations <= maxIterations) {
-            startTime = System.currentTimeMillis();
 
             try {
 
