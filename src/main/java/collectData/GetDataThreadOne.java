@@ -38,7 +38,6 @@ public class GetDataThreadOne implements Runnable {
             startTime = System.currentTimeMillis();
 
             try {
-
                 String retrieveVoornaamAndAchternaam = "SELECT voornaam, achternaam FROM persona ORDER BY RANDOM() LIMIT 1";
                 PreparedStatement firstPreparedStatement = connection.prepareStatement(retrieveVoornaamAndAchternaam);
                 ResultSet rsOfVoornaamAndAchternaam = firstPreparedStatement.executeQuery();
@@ -49,9 +48,7 @@ public class GetDataThreadOne implements Runnable {
                     voornaam = rsOfVoornaamAndAchternaam.getString("voornaam");
                     achternaam = rsOfVoornaamAndAchternaam.getString("achternaam");
                 }
-
                 startTime = System.currentTimeMillis();
-
 
                 String retrieveStudentWithCursus = "SELECT groep_heeft_cursus.cursus_cursuscode \n" +
                         "FROM groep_heeft_cursus, groep, cursus, student_in_groep, student, persona\n" +
@@ -62,7 +59,6 @@ public class GetDataThreadOne implements Runnable {
                         "student.studentnummer = persona.studentnummer AND\n" +
                         "persona.voornaam = ? AND\n" +
                         "persona.achternaam = ? ";
-
 
                 PreparedStatement secondPreparestatement = connection.prepareStatement(retrieveStudentWithCursus);
                 secondPreparestatement.setString(1, voornaam);

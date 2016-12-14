@@ -1,9 +1,5 @@
 package com.company;
 
-import collectData.GetDataThreadOne;
-import collectData.GetDataThreadTwo;
-import indexing.IndexingThread;
-import indexing.NoIndexingThread;
 import inputData.InputThreadOne;
 import inputData.InputThreadThree;
 import inputData.InputThreadTwo;
@@ -31,22 +27,22 @@ public class Main {
          * Get the data from a random student with all his courses
          */
 
-        GetDataThreadOne getDataThread = new GetDataThreadOne("First get thread");
-        getDataThread.start();
-
-        GetDataThreadTwo getDataThreadTwo = new GetDataThreadTwo("Second get thread");
-        getDataThreadTwo.start();
+//        GetDataThreadOne getDataThread = new GetDataThreadOne("First get thread");
+//        getDataThread.start();
+//
+//        GetDataThreadTwo getDataThreadTwo = new GetDataThreadTwo("Second get thread");
+//        getDataThreadTwo.start();
 
 
         /**
          * Indexing queries
          */
 
-        IndexingThread indexingThread = new IndexingThread("Indexing query");
-        indexingThread.start();
-
-        NoIndexingThread noIndexingThread = new NoIndexingThread("No indexing query");
-        noIndexingThread.start();
+//        IndexingThread indexingThread = new IndexingThread("Indexing query");
+//        indexingThread.start();
+//
+//        NoIndexingThread noIndexingThread = new NoIndexingThread("No indexing query");
+//        noIndexingThread.start();
 
 
     }

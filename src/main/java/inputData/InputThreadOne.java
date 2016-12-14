@@ -183,17 +183,17 @@ public class InputThreadOne implements Runnable {
                 createDocent(startingIterations);
                 createPersona(startingIterations, startingIterations);
                 pairStudentToClass(startingIterations);
-
+                // Kans is 1 op 30
                 boolean chanceToCreateAClass = new Random().nextInt(30) == 0;
                 if(chanceToCreateAClass == true) {
                     createClass(startingIterations);
                 }
-
+                // Kans is 1 op 30
                 boolean chanceToCreateACursus = new Random().nextInt(30) == 15;
                 if(chanceToCreateACursus == true) {
                     createCursus(startingIterations);
                 }
-
+                // 15% kans
                 boolean chanceToPairAClassToCursus = new Random().nextInt(7) == 3;
                 if(chanceToPairAClassToCursus == true) {
                     pairClassToCursus();

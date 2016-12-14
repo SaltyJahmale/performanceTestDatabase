@@ -23,11 +23,6 @@ public class IndexingThread implements Runnable {
         System.out.println("Creating " + threadName);
     }
 
-    /**
-     * Indexing voor achternaam en voornaam
-     * Voor unique indexes zou ik emails en telefoonnummers kiezen omdat die ook meestal unique moeten zijn
-     */
-
 
     public void run() {
         System.out.println("Running " + threadName);
@@ -47,9 +42,9 @@ public class IndexingThread implements Runnable {
 
                 startTimeIndex = System.currentTimeMillis();
 
-//                String createIndex = " CREATE UNIQUE INDEX voornaam_index ON persona (voornaam, achternaam, telefoonnummer);";
-//                PreparedStatement indexPreparestatement = connection.prepareStatement(createIndex);
-//                indexPreparestatement.executeQuery();
+                String createIndex = " CREATE UNIQUE INDEX voornaam_index ON persona (voornaam, achternaam, telefoonnummer);";
+                PreparedStatement indexPreparestatement = connection.prepareStatement(createIndex);
+                indexPreparestatement.executeQuery();
 
                 String retrieveVoornaamAndAchternaam = "EXPLAIN SELECT voornaam, achternaam, telefoonnummer FROM persona WHERE voornaam LIKE 'a%' ";
                 PreparedStatement secondPreparedStatement = connection.prepareStatement(retrieveVoornaamAndAchternaam);

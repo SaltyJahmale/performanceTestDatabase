@@ -23,18 +23,12 @@ public class NoIndexingThread implements Runnable {
         System.out.println("Creating " + threadName);
     }
 
-    /**
-     * Indexing voor achternaam en voornaam
-     * Voor unique indexes zou ik emails en telefoonnummers kiezen omdat die ook meestal unique moeten zijn
-     */
-
 
     public void run() {
         System.out.println("Running " + threadName);
 
         int startingIterations = 1;
         int maxIterations = 2;
-        List<Long> durationThread = new ArrayList();
 
         long startTimeNoIndex;
         long endTime;
@@ -48,9 +42,9 @@ public class NoIndexingThread implements Runnable {
 
                 startTimeNoIndex = System.currentTimeMillis();
 
-//                String disableIndex = "set enable_seqscan = true;";
-//                PreparedStatement indexPreparedStatement = connection.prepareStatement(disableIndex);
-//                indexPreparedStatement.executeQuery();
+                String disableIndex = "set enable_seqscan = true;";
+                PreparedStatement indexPreparedStatement = connection.prepareStatement(disableIndex);
+                indexPreparedStatement.executeQuery();
 
                 String retrieveVoornaamAndAchternaam = "SELECT voornaam, achternaam, telefoonnummer FROM persona WHERE voornaam LIKE 'a%' ";
                 PreparedStatement secondPreparedStatement = connection.prepareStatement(retrieveVoornaamAndAchternaam);
